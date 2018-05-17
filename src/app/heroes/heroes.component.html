@@ -1,11 +1,13 @@
-<h1>THese are the heroes</h1>
+<h1>These are the heroes</h1>
 
-<h3>{{selectedhero.name | uppercase}}</h3><p>{{selectedhero.id}}</p>
-<input [(ngModel)] = "selectedhero.name" placeholder="name"/>
+<div *ngIf="selectedhero">
+  <h3>{{selectedhero.name | uppercase}} Details</h3><p>{{selectedhero.id}}</p>
+  <input [(ngModel)] = "selectedhero.name" placeholder="name"/>
 
-<h1>Here is the list of other heroes</h1>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes" (click)="onselect(hero)">
-    <span class="badge">{{hero.id}}</span>{{hero.name}}
-  </li>
-</ul>
+  <h1>Here is the list of other heroes</h1>
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+      <span class="badge">{{hero.id}}</span>{{hero.name}}
+    </li>
+  </ul>
+</div>
